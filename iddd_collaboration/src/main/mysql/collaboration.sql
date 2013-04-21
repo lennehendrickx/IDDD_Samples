@@ -10,7 +10,7 @@ CREATE TABLE `tbl_dispatcher_last_event` (
 
 CREATE TABLE `tbl_es_event_store` (
     `event_id` bigint(20) NOT NULL auto_increment,
-    `event_body` varchar(65000) NOT NULL,
+    `event_body` text(65000) NOT NULL,
     `event_type` varchar(250) NOT NULL,
     `stream_name` varchar(250) NOT NULL,
     `stream_version` int(11) NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE `tbl_es_event_store` (
 
 CREATE TABLE `tbl_vw_calendar` (
     `calendar_id` varchar(36) NOT NULL,
-    `description` varchar(500),
+    `description` text(500),
     `name` varchar(100) NOT NULL,
     `owner_email_address` varchar(100) NOT NULL,
     `owner_identity` varchar(50) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE `tbl_vw_calendar_entry` (
     `alarm_alarm_units` int(11) NOT NULL,
     `alarm_alarm_units_type` varchar(10) NOT NULL,
     `calendar_id` varchar(36) NOT NULL,
-    `description` varchar(500),
+    `description` text(500),
     `location` varchar(100),
     `owner_email_address` varchar(100) NOT NULL,
     `owner_identity` varchar(50) NOT NULL,
@@ -104,8 +104,8 @@ CREATE TABLE `tbl_vw_forum` (
     `closed` tinyint(1) NOT NULL,
     `creator_email_address` varchar(100) NOT NULL,
     `creator_identity` varchar(50) NOT NULL,
-    `creator_name` varchar(200) NOT NULL,
-    `description` varchar(500) NOT NULL,
+    `creator_name` text(200) NOT NULL,
+    `description` text(500) NOT NULL,
     `exclusive_owner` varchar(100),
     `moderator_email_address` varchar(100) NOT NULL,
     `moderator_identity` varchar(50) NOT NULL,
@@ -123,7 +123,7 @@ CREATE TABLE `tbl_vw_post` (
     `author_email_address` varchar(100) NOT NULL,
     `author_identity` varchar(50) NOT NULL,
     `author_name` varchar(200) NOT NULL,
-    `body_text` varchar(64000) NOT NULL,
+    `body_text` text(64000) NOT NULL,
     `changed_on` datetime NOT NULL,
     `created_on` datetime NOT NULL,
     `discussion_id` varchar(36) NOT NULL,
