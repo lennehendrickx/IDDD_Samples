@@ -14,7 +14,7 @@
 
 package com.saasovation.agilepm.domain.model.tenant;
 
-import com.saasovation.agilepm.domain.model.ValueObject;
+import com.saasovation.common.ValueObject;
 
 public class TenantId extends ValueObject {
 

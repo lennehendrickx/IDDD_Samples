@@ -14,8 +14,8 @@
 
 package com.saasovation.agilepm.domain.model.team;
 
-import com.saasovation.agilepm.domain.model.ValueObject;
 import com.saasovation.agilepm.domain.model.tenant.TenantId;
+import com.saasovation.common.ValueObject;
 
 public class TeamMemberId extends ValueObject {
 

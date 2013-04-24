@@ -14,7 +14,7 @@
 
 package com.saasovation.agilepm.domain.model.discussion;
 
-import com.saasovation.agilepm.domain.model.ValueObject;
+import com.saasovation.common.ValueObject;
 
 public class DiscussionDescriptor extends ValueObject {
 

@@ -14,9 +14,9 @@
 
 package com.saasovation.agilepm.domain.model.product.backlogitem;
 
-import com.saasovation.agilepm.domain.model.ValueObject;
 import com.saasovation.agilepm.domain.model.discussion.DiscussionAvailability;
 import com.saasovation.agilepm.domain.model.discussion.DiscussionDescriptor;
+import com.saasovation.common.ValueObject;
 
 public class BacklogItemDiscussion extends ValueObject {
 

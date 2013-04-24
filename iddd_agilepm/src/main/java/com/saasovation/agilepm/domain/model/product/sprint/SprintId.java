@@ -14,8 +14,8 @@
 
 package com.saasovation.agilepm.domain.model.product.sprint;
 
-import com.saasovation.agilepm.domain.model.ValueObject;
 import com.saasovation.agilepm.domain.model.product.release.ReleaseId;
+import com.saasovation.common.ValueObject;
 
 public class SprintId extends ValueObject {
 

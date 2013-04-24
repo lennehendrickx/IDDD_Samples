@@ -16,7 +16,7 @@ package com.saasovation.agilepm.domain.model.team;
 
 import java.util.Date;
 
-import com.saasovation.agilepm.domain.model.ValueObject;
+import com.saasovation.common.ValueObject;
 
 public class MemberChangeTracker extends ValueObject {
 

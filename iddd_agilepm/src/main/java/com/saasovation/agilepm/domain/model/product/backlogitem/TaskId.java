@@ -16,7 +16,7 @@ package com.saasovation.agilepm.domain.model.product.backlogitem;
 
 import java.util.UUID;
 
-import com.saasovation.agilepm.domain.model.ValueObject;
+import com.saasovation.common.ValueObject;
 
 public class TaskId extends ValueObject {
 

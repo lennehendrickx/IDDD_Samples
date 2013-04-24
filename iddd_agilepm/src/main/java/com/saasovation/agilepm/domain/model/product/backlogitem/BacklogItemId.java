@@ -14,7 +14,7 @@
 
 package com.saasovation.agilepm.domain.model.product.backlogitem;
 
-import com.saasovation.agilepm.domain.model.ValueObject;
+import com.saasovation.common.ValueObject;
 
 public class BacklogItemId extends ValueObject {
 

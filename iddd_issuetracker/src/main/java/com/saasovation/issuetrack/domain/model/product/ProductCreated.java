@@ -1,10 +1,10 @@
-package com.saasovation.issuetrack.domain.model;
+package com.saasovation.issuetrack.domain.model.product;
 
 import java.util.Date;
 
 import com.saasovation.common.domain.model.DomainEvent;
 
-public class ProductCreatedEvent implements DomainEvent {
+public class ProductCreated implements DomainEvent {
 
 	@Override
 	public int eventVersion() {
