@@ -1,12 +1,17 @@
 package com.saasovation.issuetrack.domain.model.common;
 
+import java.util.UUID;
+
 import com.saasovation.common.ValueObject;
 
 public class Id<T> extends ValueObject {
 	private String id;
 
+	public Id() {
+		this(UUID.randomUUID().toString());
+    }	
+	
     public Id(String anId) {
-    	this();
         this.setId(anId);
     }
 
@@ -43,10 +48,6 @@ public class Id<T> extends ValueObject {
     @Override
     public String toString() {
         return "[id=" + id + "]";
-    }
-
-    protected Id() {
-        super();
     }
 
     private void setId(String anId) {

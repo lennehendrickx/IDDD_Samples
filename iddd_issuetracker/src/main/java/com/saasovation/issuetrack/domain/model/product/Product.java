@@ -1,11 +1,12 @@
 package com.saasovation.issuetrack.domain.model.product;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.saasovation.common.domain.model.Entity;
-import com.saasovation.issuetrack.domain.model.issue.Defect;
-import com.saasovation.issuetrack.domain.model.issue.DefectId;
-import com.saasovation.issuetrack.domain.model.issue.Feature;
-import com.saasovation.issuetrack.domain.model.issue.FeatureId;
 import com.saasovation.issuetrack.domain.model.issue.Initiator;
+import com.saasovation.issuetrack.domain.model.issue.Issue;
+import com.saasovation.issuetrack.domain.model.issue.IssueId;
 import com.saasovation.issuetrack.domain.model.issueassigner.IssueAssigner;
 import com.saasovation.issuetrack.domain.model.productmanager.ProductManager;
 import com.saasovation.issuetrack.domain.model.tenant.TenantId;
@@ -19,6 +20,7 @@ public class Product extends Entity {
 	private String description;
 	private ProductManager productManager;
 	private IssueAssigner issueAssigner;
+	private Set<Issue> issues;
 
 	public Product(TenantId tenantId, ProductId productId, String name,
 			String description, ProductManager productManager, 
@@ -29,14 +31,19 @@ public class Product extends Entity {
 		setDescription(description);
 		setProductManager(productManager);
 		setIssueAssigner(issueAssigner);
+		issues = new HashSet<Issue>();
 	}
 	
-	public Defect reportDefect(Initiator initiator, String description, String summary) {
-		return new Defect(new DefectId(), description, summary, initiator);
+	public Issue reportDefect(Initiator initiator, String description, String summary) {
+		Issue issue = new Issue(new IssueId(), Issue.Type.DEFECT, description, summary, initiator);
+		addIssue(issue);
+		return issue;
 	}
 	
-	public Feature requestFeature(Initiator initiator, String description, String summary) {
-		return new Feature(new FeatureId(), description, summary, initiator);
+	public Issue requestFeature(Initiator initiator, String description, String summary) {
+		Issue issue = new Issue(new IssueId(), Issue.Type.FEATURE, description, summary, initiator);
+		addIssue(issue);
+		return issue;
 	}
 
 	public TenantId getTenantId() {
@@ -98,6 +105,10 @@ public class Product extends Entity {
 		this.assertArgumentNotNull(issueAssigner, "The issueAssigner must be provided.");
 		
 		this.issueAssigner = issueAssigner;
+	}
+
+	private void addIssue(Issue issue) {
+		issues.add(issue);
 	}
 
 }
